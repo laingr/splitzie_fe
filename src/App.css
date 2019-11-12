@@ -1,22 +1,38 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+.poolList {
+  padding: 10px;
+  font-family: 'Fira Sans', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navHeader {
+  padding: 0px;
 }
 
-.App-link {
-  color: #09d3ac;
+.splitzieText {
+  font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+}
+
+.active {
+  background-color: hsla(0, 0%, 0%, 0.712) !important;
+  color: #FDF85F !important;
+}
+
+.description {
+  font-size: 10px;
+  font-family: 'Fira Sans', sans-serif;
+
+}
+
+.welcome {
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'VT323', monospace;
 }

@@ -1,23 +1,24 @@
 import React from 'react';
 import Pool from './pool';
+import Invite from './invite';
+import { Item } from 'semantic-ui-react'
+
+
 
 const Summary = (props) => {
   
   const handleClick = (item, status) => props.onHandleClick(item, status)
   
-  return ( 
-    <React.Fragment>
-      <div className = {'poolHeader'+(props.items.length===0 && 'Hidden')}>Summary</div>
-      <div className = 'poolList'>
-        {props.items.map(item => 
-          <Pool 
-            key={item.title} 
-            status={props.status?props.status:false} 
-            item={item} 
-            onHandleClick= {(item, status) => handleClick(item, status)}/>
-            )}
-      </div>
-    </React.Fragment>
+  return (
+    <Item.Group divided className = 'poolList'>
+      {props.view==='pools'?props.items.map(item => 
+        <Pool key = {item.uuid} item = {item}>
+        </Pool>
+        ) : props.items.map(item => 
+        <Invite key = {item.uuid} item = {item}>
+        </Invite>
+        )}
+    </Item.Group>
    );
 }
  

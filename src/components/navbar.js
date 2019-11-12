@@ -1,20 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Menu } from 'semantic-ui-react'
+import React from "react";
+import { Menu } from "semantic-ui-react";
 
-const NavBar = () => {
-  return(
-    <Menu
-    fixed = 'top'
-    color = 'blue'
-    widths = '2'>
-      <Menu.Item>
-        Your Pools
-      </Menu.Item>
-      <Menu.Item>
-        Pool Invites
-      </Menu.Item>
+const NavBar = props => {
+  const handleClick = (e, data) => props.onHandleClick(e, data);
+  // const handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  return (
+    <Menu fixed="top" widths="2" className="navHeader">
+      <Menu.Item
+        className="splitzieText"
+        name="pools"
+        active={props.view === "pools"}
+        onClick={(e, data) => handleClick(e, data)}
+      />
+      <Menu.Item
+        className="splitzieText"
+        name="invites"
+        active={props.view === "invites"}
+        onClick={(e, data) => handleClick(e, data)}
+      />
     </Menu>
-  )
-}
+    // My Invites
+    //   </Menu.Item>
+    // </Menu>
+  );
+};
 
-export default NavBar
+export default NavBar;
