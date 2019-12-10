@@ -3,7 +3,6 @@ import { Menu } from "semantic-ui-react";
 
 const NavBar = props => {
   const handleClick = (e, data) => props.onHandleClick(e, data);
-  // const handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   return (
     <Menu fixed="top" widths="2" className="navHeader">
@@ -20,9 +19,6 @@ const NavBar = props => {
         onClick={(e, data) => handleClick(e, data)}
       />
     </Menu>
-    // My Invites
-    //   </Menu.Item>
-    // </Menu>
   );
 };
 
